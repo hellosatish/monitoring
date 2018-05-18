@@ -1,6 +1,10 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+### Log and H2 DB file ###
+/db/
+/logs/
+
 ### STS ###
 .apt_generated
 .classpath

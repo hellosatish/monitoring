@@ -1,0 +1,10 @@
+#Global configurations
+global:
+  scrape_interval:     5s # Set the scrape interval to every 5 seconds.
+  evaluation_interval: 5s # Evaluate rules every 5 seconds.
+
+scrape_configs:
+  - job_name: 'person-app'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['localhost:9000']
