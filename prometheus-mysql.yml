@@ -1,0 +1,16 @@
+# config file for monitoring MySQL via mysqld_exporter on localhost
+global:
+  scrape_interval:     5s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 5s # Evaluate rules every 15 seconds. The default is every 1 minute.
+
+scrape_configs:
+  - job_name: 'mysql-monitor'
+    static_configs:
+      - targets: ['localhost:9104']
+        labels:
+            alias: db1
+    params:
+      collect[]:
+        - perf_schema.tableiowaits
+        - perf_schema.indexiowaits
+        - perf_schema.tablelocks
